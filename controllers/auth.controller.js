@@ -1,9 +1,11 @@
+const User = require('../models/user.model');
+
 function getSignup(req, res) {
   res.render('customer/auth/signup');
 }
 
 function signup(req, res){
-  
+
 }
 
 function getLogin(req, res) {
