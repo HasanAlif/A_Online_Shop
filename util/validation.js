@@ -12,8 +12,7 @@ function userCredentialsAreValid(email, password) {
 }
 function userDetailsAreValid(email, password, name, street, postal, city) {
   return (
-    userCredentialsAreValid(email, password
-    ) && 
+    userCredentialsAreValid(email, password) && 
     !isEmpty(name) &&
     !isEmpty(street) &&
     !isEmpty(postal) &&
@@ -21,8 +20,8 @@ function userDetailsAreValid(email, password, name, street, postal, city) {
   );
 }
 
-function emailIsConfirmed(email, confirmedEmail) {
-    return email === confirmedEmail;
+function emailIsConfirmed(email, confirmEmail) {
+    return email === confirmEmail;
 }
 
 module.exports = {

@@ -34,7 +34,7 @@ class User{
         await db.getDb().collection('users').insertOne({
             email: this.email,
             password: hashedPassword,
-            name: this.name,
+            fullname: this.fullname,
             address: this.address
         });
         
