@@ -1,17 +1,17 @@
 const express = require('express');
 
-const authController = require('../controllers/auth.controller');
-
 const router = express.Router();
 
-router.get('/signup', authController.getSignup);
+router.get('/', function(req, res) {
+  res.redirect('/products');
+});
 
-router.post('/signup', authController.signup);
+router.get('/401', function(req, res) {
+  res.status(401).render('shared/401');
+});
 
-router.get('/login', authController.getLogin);
-
-router.get('/', function(req, res){
-    res.redirect('/products');
+router.get('/403', function(req, res) {
+  res.status(403).render('shared/403');
 });
 
 module.exports = router;
