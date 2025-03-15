@@ -2,6 +2,8 @@ const mongodb = require('mongodb');
 
 const db = require('../data/database');
 
+
+
 class Product {
   constructor(productData) {
     this.title = productData.title;
@@ -81,6 +83,12 @@ class Product {
     this.image = newImage;
     this.updateImageData();
   }
+
+  remove() {
+    const productId = new mongodb.ObjectId(this.id);
+    return db.getDb().collection('products').deleteOne({ _id: productId });
+  }
+  
 }
 
 module.exports = Product;
